@@ -16,8 +16,8 @@
 | Java | 17 |
 | Spring Boot | 4.0.2 |
 | Spring Data JPA | Spring Boot 관리 |
-| MySQL | - |
-| Dependency-management | 1.1.7 |
+| MySQL | 8.x |
+| io.spring.dependency-management | 1.1.7 |
 
 - **Architecture**: Domain-Driven Design (Partial), Layered Architecture (Query/Command Service)
 
@@ -116,6 +116,75 @@ CommercePilot/
 ├── src/test/
 └── build.gradle
 ```
+
+---
+
+## ⚙️ 설치 및 실행
+
+### 1. 필수 요구사항
+- Java 17 이상
+- MySQL 8.x 이상
+- Gradle (프로젝트에 포함된 Wrapper 사용 권장)
+
+### 2. 프로젝트 클론
+```bash
+git clone https://github.com/your-username/CommercePilot.git
+cd CommercePilot
+```
+
+### 3. 데이터베이스 설정
+```sql
+-- MySQL에 데이터베이스 생성
+CREATE DATABASE CommercePilot DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+> `ddl-auto=update` 설정으로 애플리케이션 실행 시 엔티티 기준으로 테이블이 자동 생성/갱신됩니다.
+
+### 4. 애플리케이션 설정
+
+`src/main/resources/application.properties`
+```properties
+spring.application.name=CommercePilot
+
+spring.datasource.url=jdbc:mysql://localhost:3306/CommercePilot
+spring.datasource.username=your-name
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+springdoc.swagger-ui.path=/swagger-ui.html
+springdoc.api-docs.path=/v3/api-docs
+
+server.servlet.session.timeout=24h
+server.servlet.session.cookie.http-only=true
+```
+
+> 사용자 환경에 맞게 `username`, `password`를 수정해주세요.
+
+### 5. 애플리케이션 실행
+
+Gradle로 실행:
+```bash
+./gradlew bootRun
+```
+
+또는 빌드 후 JAR 실행:
+```bash
+./gradlew build
+java -jar build/libs/CommercePilot-0.0.1-SNAPSHOT.jar
+```
+
+> JAR 파일명은 프로젝트 버전에 따라 달라질 수 있습니다. (`build/libs` 폴더 확인)
+
+### 6. 접속 확인
+
+| 항목 | URL |
+| :--- | :--- |
+| API 기본 주소 | http://localhost:8080 |
+| Swagger UI | http://localhost:8080/swagger-ui.html |
+| OpenAPI Docs (JSON) | http://localhost:8080/v3/api-docs |
 
 ---
 
