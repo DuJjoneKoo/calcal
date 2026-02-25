@@ -145,14 +145,14 @@ CommercePilot/
 
 ### 2. 프로젝트 클론
 ```bash
-[git clone https://github.com/your-username/CommercePilot.git](https://github.com/sprt-team4th-project/first-prj-be.git)
-cd CommercePilot
+git clone https://github.com/sprt-team4th-project/first-prj-be.git
+cd first-prj-be
 ```
 
 ### 3. 데이터베이스 설정
 ```sql
 -- MySQL에 데이터베이스 생성
-CREATE DATABASE CommercePilot DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE CommercePilot DEFAULT;
 ```
 
 > `ddl-auto=update` 설정으로 애플리케이션 실행 시 엔티티 기준으로 테이블이 자동 생성/갱신됩니다.
@@ -164,8 +164,8 @@ CREATE DATABASE CommercePilot DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unic
 spring.application.name=CommercePilot
 
 spring.datasource.url=jdbc:mysql://localhost:3306/CommercePilot
-spring.datasource.username=root
-spring.datasource.password=12345678
+spring.datasource.username=your-name
+spring.datasource.password=ypur-password
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto=update
@@ -226,3 +226,4 @@ java -jar build/libs/CommercePilot-0.0.1-SNAPSHOT.jar
 - **이지민 (Sub Leader)**: 레이어 책임 분리와 코드 개선 경험에 만족함. 설계 단계에서 도메인 책임과 세션 정의를 더 깊이 고민해 볼 계획.
 - **정민교 (Presenter)**: 레이어 책임 분리와 코드 개선에 전반적으로 만족함. 향후 프로젝트 초기 설계 단계에서 도메인 책임 할당과 세션 정의에 대해 더 깊은 고민이 필요함을 체감함.
 - **신현민 (Sub Leader)**: 공통 DTO를 활용한 코드 가독성 향상을 체감함. 앞으로도 원활한 소통을 유지하고 기술적 기본 구성을 탄탄히 하는 데 주력할 예정.
+- **이지혜 (Recorder)**: 패키지 구성 및 기능 구현 경험에 만족함. 앞으로 Git 조작에 더욱 주의를 기울이겠다고 다짐함.
