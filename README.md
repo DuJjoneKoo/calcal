@@ -17,7 +17,7 @@
 | Spring Boot | 4.0.2 |
 | Spring Data JPA | Spring Boot 관리 |
 | MySQL | - |
-| io.spring.dependency-management | 1.1.7 |
+| Dependency-management | 1.1.7 |
 
 - **Architecture**: Domain-Driven Design (Partial), Layered Architecture (Query/Command Service)
 
