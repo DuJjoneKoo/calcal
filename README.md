@@ -145,7 +145,7 @@ CommercePilot/
 
 ### 2. 프로젝트 클론
 ```bash
-git clone https://github.com/your-username/CommercePilot.git
+[git clone https://github.com/your-username/CommercePilot.git](https://github.com/sprt-team4th-project/first-prj-be.git)
 cd CommercePilot
 ```
 
